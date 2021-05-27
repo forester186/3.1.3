@@ -8,12 +8,12 @@
 <form th:method="post" th:action="@{/admin}" th:object="${person}">
 
     <label for="name">Name</label>
-    <input type="text" th:field="*{name}" id="name" style=position:absolute;left:5%;>
+    <input type="text" th:field="*{name}" id="name" style=position:absolute;left:5%; placeholder="Name">
 
     <br>
 
     <label for="surname">Surname</label>
-    <input type="text" th:field="*{surname}" id="surname" style=position:absolute;left:5%;>
+    <input type="text" th:field="*{surname}" id="surname" style=position:absolute;left:5%; placeholder="Surname">
 
     <br>
 
@@ -23,12 +23,12 @@
     <br>
 
     <label for="email">Email</label>
-    <input type="text" th:field="*{email}" id="email" style=position:absolute;left:5%;>
+    <input type="text" th:field="*{email}" id="email" style=position:absolute;left:5%; placeholder="Email">
 
     <br>
 
     <label for="password">Password</label>
-    <input type="text" th:field="*{password}" id="password" style=position:absolute;left:5%;>
+    <input type="text" th:field="*{password}" id="password" style=position:absolute;left:5%; placeholder="Password">
 
     <br>
 

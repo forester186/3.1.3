@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
@@ -16,8 +18,12 @@ public class AdminController {
     }
 
     @GetMapping()
-    public String getAll(ModelMap modelMap){
+    public String getAll(ModelMap modelMap, Principal principal){
+        User user = userService.getUserByName(principal.getName());
+        modelMap.addAttribute("admin", user);
         modelMap.addAttribute("people", userService.getAllUser());
+        modelMap.addAttribute("person", new User());
+        modelMap.addAttribute("roleList", userService.getAllRole());
         return "admin/allUser";
     }
 
@@ -42,11 +48,13 @@ public class AdminController {
         return "admin/update";
     }
 
-    @PostMapping("/{id}")
-    public String update(@ModelAttribute("person") User user, @PathVariable("id") Long id, @RequestParam("roles") String[] roleList){
-        userService.updateUser(id,user, roleList);
+    @PostMapping("/update")
+    public String update(@ModelAttribute("person") User user, @RequestParam( "roles1") String[] roleList){
+        System.out.println(user);
+        userService.updateUser(user.getId(),user, roleList);
         return "redirect:/admin";
     }
+
 
     @GetMapping("/{id}")
     public String delete(@PathVariable("id") Long id){

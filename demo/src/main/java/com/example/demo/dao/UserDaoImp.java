@@ -26,6 +26,8 @@ public class UserDaoImp implements UserDao {
             roles.add(getRoleByName(str));
             user.setRoles(roles);
         }
+        String str = roleList[0];
+        System.out.println(str);
         entityManager.persist(user);
     }
 
