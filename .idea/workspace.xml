@@ -5,7 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="99748636-cdfc-44e4-b954-2cd60e93ac50" name="Default Changelist" comment="Commit">
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/AdminRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/UserRestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/static/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/demo/src/main/resources/static/app1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/demo_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/demo_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_20_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jetbrains_annotations_21_0_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/demo/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/DemoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/model/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/model/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/UserServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/java/com/example/demo/service/UserServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/admin/allUser.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/admin/allUser.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/admin/new.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/admin/update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo/src/main/resources/templates/user/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/demo/src/main/resources/templates/user/user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +37,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -51,7 +73,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="database.data.extractors.current.export.id" value="Comma-separated (CSV)_id" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/3.1.2-main/3.1.2-main" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/3.1.3-main" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -64,6 +87,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.DemoApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
@@ -185,6 +219,40 @@
       <workItem from="1622057128892" duration="665000" />
       <workItem from="1622057802338" duration="161000" />
       <workItem from="1622088389732" duration="6769000" />
+      <workItem from="1622131463350" duration="890000" />
+      <workItem from="1622374553670" duration="3000" />
+      <workItem from="1622400763332" duration="12000" />
+      <workItem from="1622476600007" duration="1762000" />
+      <workItem from="1622479792643" duration="255000" />
+      <workItem from="1622480072585" duration="4735000" />
+      <workItem from="1622562601141" duration="6095000" />
+      <workItem from="1622603671586" duration="9880000" />
+      <workItem from="1622870297632" duration="3140000" />
+      <workItem from="1622879538674" duration="3903000" />
+      <workItem from="1622963483814" duration="5000" />
+      <workItem from="1622963657702" duration="754000" />
+      <workItem from="1623031137853" duration="4176000" />
+      <workItem from="1623068760372" duration="70000" />
+      <workItem from="1623075809389" duration="7000" />
+      <workItem from="1623129532370" duration="623000" />
+      <workItem from="1623131652815" duration="2592000" />
+      <workItem from="1623296415365" duration="1006000" />
+      <workItem from="1623376592525" duration="23163000" />
+      <workItem from="1623478966278" duration="59000" />
+      <workItem from="1623479032811" duration="48000" />
+      <workItem from="1623479100851" duration="1934000" />
+      <workItem from="1623482348365" duration="16775000" />
+      <workItem from="1623580438223" duration="15683000" />
+      <workItem from="1623603961813" duration="100000" />
+      <workItem from="1623604095376" duration="333000" />
+      <workItem from="1623604519613" duration="871000" />
+      <workItem from="1623608246107" duration="672000" />
+      <workItem from="1623609111696" duration="94000" />
+      <workItem from="1623609519538" duration="44000" />
+      <workItem from="1623609590807" duration="177000" />
+      <workItem from="1623610525194" duration="164000" />
+      <workItem from="1623610717215" duration="94000" />
+      <workItem from="1623610855216" duration="4619000" />
     </task>
     <task id="LOCAL-00001" summary="Commit">
       <created>1622095738447</created>
@@ -193,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1622095738447</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit">
+      <created>1622131744883</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622131744883</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,44 +294,39 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java</url>
-          <line>69</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java</url>
-          <line>71</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java</url>
-          <line>72</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java</url>
-          <line>76</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java</url>
-          <line>74</line>
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/mapper/UserMapper.java</url>
+          <line>12</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/dao/UserDaoImp.java</url>
-          <line>75</line>
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/mapper/UserMapper.java</url>
+          <line>13</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/mapper/UserMapper.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/mapper/UserMapper.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/mapper/UserMapper.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/mapper/UserMapper.java</url>
+          <line>17</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/demo/src/main/java/com/example/demo/mapper/UserMapper.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
-import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -16,23 +15,12 @@ public class UserDaoImp implements UserDao {
     @PersistenceContext
     EntityManager entityManager;
 
-    @Override
-    public void saveUser(User user, String[] roleList) {
-        List<Role> roles = new ArrayList<>();
-        if(roleList.length == 2){
-            user.setRoles(getAllRole());
-        } else {
-            String str = roleList[0];
-            roles.add(getRoleByName(str));
-            user.setRoles(roles);
-        }
-        String str = roleList[0];
-        System.out.println(str);
+    public User save(User user){
         entityManager.persist(user);
+        return user;
     }
 
     @Override
-    @SuppressWarnings("unchecked")
     public List<Role> getAllRole() {
         return entityManager.createQuery("select r from Role r", Role.class).getResultList();
     }
@@ -44,7 +32,6 @@ public class UserDaoImp implements UserDao {
         return typedQuery.getSingleResult();
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public List<User> getAllUser() {
         return entityManager.createQuery("select u from User u", User.class).getResultList();
@@ -61,22 +48,11 @@ public class UserDaoImp implements UserDao {
     public void deleteUser(Long id) {
         User user = gerUser(id);
         entityManager.remove(user);
-
     }
 
     @Override
-    public void updateUser(Long id, User update, String[] roleList) {
-        List<Role> roles = new ArrayList<>();
-        User user = gerUser(id);
-        user = update;
-        if(roleList.length == 2){
-            user.setRoles(getAllRole());
-        } else {
-            String str = roleList[0];
-            roles.add(getRoleByName(str));
-            user.setRoles(roles);
-        }
-        entityManager.merge(user);
+    public User updateUser(User user) {
+        return entityManager.merge(user);
     }
 
     @Override

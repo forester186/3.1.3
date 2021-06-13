@@ -2,7 +2,6 @@ package com.example.demo.security;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -11,7 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
-import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
 @EnableWebSecurity
@@ -53,7 +51,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
                 .antMatchers("/admin/**").access("hasAnyRole('ROLE_ADMIN')") // разрешаем входить на /admin пользователям с ролью Admin
-                .antMatchers("/user/**").access("hasAnyRole('ROLE_USER')") // разрешаем входить на /user пользователям с ролью User
+                .antMatchers("/user/**").access("hasAnyRole('ROLE_USER')")// разрешаем входить на /user пользователям с ролью User
+                .antMatchers("/api/user").access("hasAnyRole('ROLE_USER')")
+                .antMatchers("/rest/**").permitAll()
                 .and().formLogin()  // Spring сам подставит свою логин форму
                 .successHandler(successUserHandler); // подключаем наш SuccessHandler для перенеправления по ролям
     }

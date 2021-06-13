@@ -1,11 +1,10 @@
 package com.example.demo.service;
 
+
 import com.example.demo.dao.UserDao;
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -21,8 +20,9 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public void saveUser(User user, String[] roleList) {
-        userDao.saveUser(user, roleList);
+    public User save(User user) {
+        return userDao.save(user);
+
     }
 
     @org.springframework.transaction.annotation.Transactional(readOnly = true)
@@ -38,13 +38,15 @@ public class UserServiceImp implements UserService{
     }
 
     @Override
-    public void deleteUser(Long id) {
+    public boolean deleteUser(Long id) {
         userDao.deleteUser(id);
+        return false;
     }
 
     @Override
-    public void updateUser(Long id, User user, String[] roleList) {
-        userDao.updateUser(id,user, roleList);
+    public User updateUser(User user) {
+        return userDao.updateUser(user);
+
     }
 
     @Override

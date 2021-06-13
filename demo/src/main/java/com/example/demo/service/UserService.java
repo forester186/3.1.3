@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
 
@@ -7,15 +8,16 @@ import java.util.List;
 
 public interface UserService {
 
-    void saveUser(User user,String[] roleList);
+
+    User save(User userDTO);
 
     List<User> getAllUser();
 
     User gerUser(Long id);
 
-    void deleteUser(Long id);
+    boolean deleteUser(Long id);
 
-    void updateUser(Long id, User user, String[] roleList);
+    User updateUser(User user);
 
     User getUserByName(String name);
 

@@ -1,5 +1,6 @@
 package com.example.demo.dao;
 
+
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
 
@@ -7,7 +8,8 @@ import java.util.List;
 
 public interface UserDao {
 
-    void saveUser(User user, String[] roleList);
+
+    User save(User userDTO);
 
     List<User> getAllUser();
 
@@ -19,7 +21,7 @@ public interface UserDao {
 
     void deleteUser(Long id);
 
-    void updateUser(Long id, User user, String[] roleList);
+    User updateUser(User user);
 
     User getUserByName(String name);
 }
