@@ -12,7 +12,7 @@ fetch('/api/user').then(
                 temp += "<td>" + data.email + "</td>";
                 let rolesStr = "";
                 data.roles.forEach(r => {
-                    rolesStr += r.role + " ";
+                    rolesStr += r.name + " ";
                 })
                 temp += rolesStr + "</td>" + "</tr>";
                 document.getElementById("tableUserBody").innerHTML = temp;

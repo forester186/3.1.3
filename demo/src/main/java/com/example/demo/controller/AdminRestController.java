@@ -33,7 +33,7 @@ public class AdminRestController {
 
     @GetMapping("/user")
     public ResponseEntity<User> getUser(Principal principal) {
-        return userService.getUserByName(principal.getName()) !=null ? new ResponseEntity<>(userService.getUserByName(principal.getName()), HttpStatus.OK):new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return userService.getUserByName(principal.getName()) != null ? new ResponseEntity<>(userService.getUserByName(principal.getName()), HttpStatus.OK):new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     @GetMapping("/users")
@@ -44,21 +44,16 @@ public class AdminRestController {
                 : new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping("/users")
+    @PutMapping("/users/{id}")
     public ResponseEntity<User> editUser(@RequestBody User user) {
-        boolean res = userService.updateUser(user);
-        return res
-                ? new ResponseEntity<>(HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
+        return new ResponseEntity<>(userService.updateUser(user),HttpStatus.OK);
 
     }
 
     @DeleteMapping("/users/{id}")
     public ResponseEntity<?> deleteUser(@PathVariable Long id) {
-        boolean del = userService.deleteUser(id);
-        return del
-                ? new ResponseEntity<>(HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
+        userService.deleteUser(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
     }
 

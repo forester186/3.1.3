@@ -5,12 +5,11 @@ import com.example.demo.dao.UserDao;
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-@Transactional
 public class UserServiceImp implements UserService{
 
     private final UserDao userDao;
@@ -19,35 +18,33 @@ public class UserServiceImp implements UserService{
         this.userDao = userDao;
     }
 
+    @Transactional
     @Override
     public User save(User user) {
         return userDao.save(user);
-
     }
 
-    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     @Override
     public List<User> getAllUser() {
         return userDao.getAllUser();
     }
 
-    @org.springframework.transaction.annotation.Transactional(readOnly = true)
+
     @Override
     public User gerUser(Long id) {
         return userDao.gerUser(id);
     }
 
+    @Transactional
     @Override
-    public boolean deleteUser(Long id) {
+    public void deleteUser(Long id) {
         userDao.deleteUser(id);
-        return true;
     }
 
+    @Transactional
     @Override
-    public boolean updateUser(User user) {
-        userDao.updateUser(user);
-        return true;
-
+    public User updateUser(User user) {
+        return userDao.updateUser(user);
     }
 
     @Override
@@ -60,7 +57,6 @@ public class UserServiceImp implements UserService{
         return userDao.getRoleByName(role);
     }
 
-    @org.springframework.transaction.annotation.Transactional(readOnly = true)
     @Override
     public List<Role> getAllRole() {
         return userDao.getAllRole();

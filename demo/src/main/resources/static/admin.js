@@ -35,7 +35,7 @@ function createTable(data) {
         temp += "<td>";
         let rolesStr = "";
         u.roles.forEach(r => {
-            rolesStr += r.role + " ";
+            rolesStr += r.name + " ";
         })
         temp += rolesStr + "</td>";
         temp += "<td><button class=\"btn btn-info\" onclick=\"fEdit(this)\" id=\"editBtn" + u.id + "\">Edit</button></td>";
@@ -58,7 +58,7 @@ fetch('/rest/user').then(
                 temp += "<td>";
                 let rolesStr = "";
                 data.roles.forEach(r => {
-                    rolesStr += r.role + " ";
+                    rolesStr += r.name + " ";
                 })
                 temp += rolesStr + "</td>" + "</tr>";
                 document.getElementById("tableUserBody2").innerHTML = temp;
@@ -74,7 +74,7 @@ fetch('/rest/roles').then(
                 console.log(roles)
                 document.getElementById("rolesNew").size = roles.length;
                 roles.forEach(r => {
-                    temp += "<option>" + r.role + "</option>";
+                    temp += "<option>" + r.name + "</option>";
                 })
                 document.getElementById("rolesNew").innerHTML = temp;
             }
@@ -99,7 +99,7 @@ $('#addUserBtn').click(function () {
     [].slice.call(document.getElementById("rolesNew")).forEach(op => {
         if (op.selected) {
             allRoles.forEach(r => {
-                if (r.role == op.text) {
+                if (r.name == op.text) {
                     newUser.roles.push(r);
                 }
             })
@@ -139,6 +139,7 @@ function getUserById(id) {
 }
 
 $('#editUserBtn').click(function () {
+    let id = document.getElementById("idEditModal").value;
     let edit = {
         id: -1,
         name: "",
@@ -159,14 +160,14 @@ $('#editUserBtn').click(function () {
     [].slice.call(document.getElementById("rolesEditModal")).forEach(op => {
         if (op.selected) {
             allRoles.forEach(r => {
-                if (r.role == op.text) {
+                if (r.name == op.text) {
                     edit.roles.push(r);
                 }
             })
         }
     })
     console.log(edit)
-    fetch('/rest/users', {
+    fetch('/rest/users/' + id, {
         method: 'PUT',
         body: JSON.stringify(edit),
         headers: {'Content-Type': 'application/json'}
@@ -213,7 +214,6 @@ function fEdit(el) {
     let id = idStr.slice(7);
     allUsers.forEach(u => {
         if (u.id == id) {
-            // user1 = u;
             console.log(u);
             document.getElementById("idEditModal").value = u.id;
             document.getElementById("firstNameEditModal").value = u.name;
@@ -230,7 +230,7 @@ function fEdit(el) {
                         select = " selected";
                     }
                 })
-                temp += "<option" + select + ">" + r.role + "</option>";
+                temp += "<option" + select + ">" + r.name + "</option>";
             })
             document.getElementById("rolesEditModal").innerHTML = temp;
         }
@@ -252,7 +252,7 @@ function fDel(el) {
             document.getElementById("rolesDelModal").size = u.roles.length.toString();
             let temp = "";
             u.roles.forEach(r => {
-                temp += "<option>" + r.role + "</option>";
+                temp += "<option>" + r.name + "</option>";
             })
             document.getElementById("rolesDelModal").innerHTML = temp;
         }

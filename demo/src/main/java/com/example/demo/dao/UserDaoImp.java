@@ -27,7 +27,7 @@ public class UserDaoImp implements UserDao {
 
     @Override
     public Role getRoleByName(String role) {
-        TypedQuery<Role> typedQuery = entityManager.createQuery("select r from Role r where r.role = :role", Role.class);
+        TypedQuery<Role> typedQuery = entityManager.createQuery("select r from Role r where r.name = :role", Role.class);
         typedQuery.setParameter("role", role);
         return typedQuery.getSingleResult();
     }
@@ -51,8 +51,8 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    public void updateUser(User user) {
-        entityManager.merge(user);
+    public User updateUser(User user) {
+        return entityManager.merge(user);
     }
 
     @Override

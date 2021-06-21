@@ -15,9 +15,9 @@ public interface UserService {
 
     User gerUser(Long id);
 
-    boolean deleteUser(Long id);
+    void deleteUser(Long id);
 
-    boolean updateUser(User user);
+    User updateUser(User user);
 
     User getUserByName(String name);
 

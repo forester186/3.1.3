@@ -50,10 +50,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().csrf().disable();
 
         http.authorizeRequests()
-                .antMatchers("/admin/**").access("hasAnyRole('ROLE_ADMIN')") // разрешаем входить на /admin пользователям с ролью Admin
-                .antMatchers("/user/**").access("hasAnyRole('ROLE_USER')")// разрешаем входить на /user пользователям с ролью User
-                .antMatchers("/api/user").access("hasAnyRole('ROLE_USER')")
-                .antMatchers("/rest/**").access("hasAnyRole('ROLE_ADMIN')")
+                .antMatchers("/admin/**").access("hasRole('ROLE_ADMIN')") // разрешаем входить на /admin пользователям с ролью Admin
+                .antMatchers("/user/**").access("hasRole('ROLE_USER')")// разрешаем входить на /user пользователям с ролью User
+                .antMatchers("/api/user").access("hasRole('ROLE_USER')")
+                .antMatchers("/rest/**").access("hasRole('ROLE_ADMIN')")
                 .and().formLogin()  // Spring сам подставит свою логин форму
                 .successHandler(successUserHandler); // подключаем наш SuccessHandler для перенеправления по ролям
     }
