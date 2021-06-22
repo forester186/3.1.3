@@ -33,15 +33,13 @@ public class AdminRestController {
 
     @GetMapping("/user")
     public ResponseEntity<User> getUser(Principal principal) {
-        return userService.getUserByName(principal.getName()) != null ? new ResponseEntity<>(userService.getUserByName(principal.getName()), HttpStatus.OK):new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        return new ResponseEntity<>(userService.getUserByName(principal.getName()), HttpStatus.OK);
     }
 
     @GetMapping("/users")
     public ResponseEntity<List<User>> getUsers() {
-        List<User> list = userService.getAllUser();
-        return list != null && !list.isEmpty()
-                ? new ResponseEntity<>(list, HttpStatus.OK)
-                : new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(userService.getAllUser(), HttpStatus.OK);
+
     }
 
     @PutMapping("/users/{id}")
